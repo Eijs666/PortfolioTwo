@@ -1,0 +1,106 @@
+package com.company;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.PriorityQueue;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Opgave 1 - Instantiere AdjacencyGraph
+        AdjacencyGraph adjacencyGraph = new AdjacencyGraph();
+
+        //Instantiere byer
+        Vertex eskildstrup = new Vertex("Eskildstrup");
+        Vertex haslev = new Vertex("Haslev");
+        Vertex holdBæk = new Vertex("Holbæk");
+        Vertex jærgerspris  = new Vertex("Jægerspris");
+        Vertex kalundborg = new Vertex("Kalundborg");
+        Vertex korsør  = new Vertex("Korsør");
+        Vertex køge = new Vertex("Køge");
+        Vertex maribo = new Vertex("Maribo");
+        Vertex nakskov = new Vertex("Nakskov");
+        Vertex nykøbing_f = new Vertex("Nykøbing F");
+        Vertex næstved = new Vertex("Næstved");
+        Vertex ringsted = new Vertex("Ringsted");
+        Vertex roskilde = new Vertex("Roskilde");
+        Vertex slagelse = new Vertex("Slagelse");
+        Vertex sorø = new Vertex("Sorø");
+        Vertex vordingborg = new Vertex("Vordinborg");
+
+        //Tilføjer Vertices/punkterne til vores graf
+        adjacencyGraph.addVertex(eskildstrup);
+        adjacencyGraph.addVertex(haslev);
+        adjacencyGraph.addVertex(holdBæk);
+        adjacencyGraph.addVertex(jærgerspris);
+        adjacencyGraph.addVertex(kalundborg);
+        adjacencyGraph.addVertex(korsør);
+        adjacencyGraph.addVertex(køge);
+        adjacencyGraph.addVertex(maribo);
+        adjacencyGraph.addVertex(nakskov);
+        adjacencyGraph.addVertex(nykøbing_f);
+        adjacencyGraph.addVertex(næstved);
+        adjacencyGraph.addVertex(ringsted);
+        adjacencyGraph.addVertex(roskilde);
+        adjacencyGraph.addVertex(slagelse);
+        adjacencyGraph.addVertex(sorø);
+        adjacencyGraph.addVertex(vordingborg);
+
+        //Tilføjer edges med en distance mellem to vertices
+        adjacencyGraph.newEdge(eskildstrup, maribo, 28);
+        adjacencyGraph.newEdge(eskildstrup, nykøbing_f, 13);
+        adjacencyGraph.newEdge(eskildstrup, vordingborg, 24);
+        adjacencyGraph.newEdge(haslev, korsør, 60);
+        adjacencyGraph.newEdge(haslev, køge, 24);
+        adjacencyGraph.newEdge(haslev, næstved, 25);
+        adjacencyGraph.newEdge(haslev, ringsted, 19);
+        adjacencyGraph.newEdge(haslev, roskilde, 47);
+        adjacencyGraph.newEdge(haslev, slagelse, 48);
+        adjacencyGraph.newEdge(haslev, sorø, 34);
+        adjacencyGraph.newEdge(haslev, vordingborg, 40);
+        adjacencyGraph.newEdge(holdBæk, jærgerspris, 34);
+        adjacencyGraph.newEdge(holdBæk, kalundborg, 44);
+        adjacencyGraph.newEdge(holdBæk, korsør, 66);
+        adjacencyGraph.newEdge(holdBæk, ringsted, 36);
+        adjacencyGraph.newEdge(holdBæk, roskilde, 32);
+        adjacencyGraph.newEdge(holdBæk, slagelse, 46);
+        adjacencyGraph.newEdge(holdBæk, sorø, 34);
+        adjacencyGraph.newEdge(jærgerspris, korsør, 95);
+        adjacencyGraph.newEdge(jærgerspris, køge, 58);
+        adjacencyGraph.newEdge(jærgerspris, ringsted, 56);
+        adjacencyGraph.newEdge(jærgerspris, roskilde, 33);
+        adjacencyGraph.newEdge(jærgerspris, slagelse, 74);
+        adjacencyGraph.newEdge(jærgerspris, sorø, 63);
+        adjacencyGraph.newEdge(kalundborg, ringsted, 62);
+        adjacencyGraph.newEdge(kalundborg, roskilde, 70);
+        adjacencyGraph.newEdge(kalundborg, slagelse, 39);
+        adjacencyGraph.newEdge(kalundborg, sorø, 51);
+        adjacencyGraph.newEdge(korsør, næstved, 45);
+        adjacencyGraph.newEdge(korsør, slagelse, 20);
+        adjacencyGraph.newEdge(køge, næstved, 45);
+        adjacencyGraph.newEdge(køge, ringsted, 28);
+        adjacencyGraph.newEdge(køge, roskilde, 25);
+        adjacencyGraph.newEdge(køge, vordingborg , 60);
+        adjacencyGraph.newEdge(maribo, nakskov, 27);
+        adjacencyGraph.newEdge(maribo, nykøbing_f, 26);
+        adjacencyGraph.newEdge(næstved, roskilde, 57);
+        adjacencyGraph.newEdge(næstved, ringsted, 26);
+        adjacencyGraph.newEdge(næstved, slagelse, 37);
+        adjacencyGraph.newEdge(næstved, sorø, 32);
+        adjacencyGraph.newEdge(næstved, vordingborg, 28);
+        adjacencyGraph.newEdge(ringsted, roskilde, 31);
+        adjacencyGraph.newEdge(ringsted, sorø, 15);
+        adjacencyGraph.newEdge(ringsted, vordingborg, 58);
+        adjacencyGraph.newEdge(slagelse, sorø, 14);
+
+        //Print Adjacency Grafen ud
+        adjacencyGraph.printGraph();
+        System.out.println("-------------");
+        adjacencyGraph.MSTPRIMS();
+        System.out.println("--------------");
+        adjacencyGraph.calculator();
+
+    }
+
+}
+
